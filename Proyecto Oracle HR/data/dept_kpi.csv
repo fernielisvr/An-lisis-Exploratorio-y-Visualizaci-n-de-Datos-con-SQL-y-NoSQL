@@ -1,0 +1,13 @@
+departmentname,empleados,salariomedio,salariomax,antiguedadmedia,con_comision
+Executive,4,18750.0,24000.0,22.5,0
+Accounting,2,10154.0,12008.0,24.0,0
+Public Relations,1,10000.0,10000.0,24.0,0
+Marketing,2,9500.0,13000.0,21.5,0
+Sales,35,8945.71,14000.0,19.83,35
+Finance,6,8601.33,12008.0,21.33,0
+,1,7000.0,7000.0,19.0,1
+Human Resources,1,6500.0,6500.0,24.0,0
+IT,5,5760.0,9000.0,19.8,0
+Administration,2,4400.0,4400.0,23.0,0
+Purchasing,6,4150.0,11000.0,20.83,0
+Shipping,45,3475.56,8200.0,20.11,0

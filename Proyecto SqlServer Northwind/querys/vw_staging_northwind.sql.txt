@@ -1,0 +1,21 @@
+CREATE VIEW VW_STAGING_NORTHWIND
+AS
+SELECT 
+    o.OrderID, o.OrderDate,
+    YEAR(o.OrderDate) AS OrderYear, MONTH(o.OrderDate) AS OrderMonth,
+    DATEFROMPARTS(YEAR(o.OrderDate), MONTH(o.OrderDate), 1) AS YearMonth,
+    DATEPART(quarter, o.OrderDate) AS OrderQuarter,
+    DATENAME(weekday, o.OrderDate) AS DayOfWeek,
+    c.CustomerID, c.CompanyName AS CustomerName, c.Country AS CustomerCountry, c.Region AS CustomerRegion,
+    e.EmployeeID, CONCAT(e.FirstName, ' ', e.LastName) AS EmployeeName,
+    p.ProductID, p.ProductName, cat.CategoryID, cat.CategoryName,
+    s.SupplierID, s.CompanyName AS SupplierName,
+    od.UnitPrice, od.Quantity, od.Discount,
+    (od.UnitPrice * od.Quantity * (1 - od.Discount)) AS TotalSales
+FROM Orders o
+INNER JOIN [Order Details] od ON o.OrderID = od.OrderID
+INNER JOIN Customers c ON o.CustomerID = c.CustomerID
+INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID
+INNER JOIN Products p ON od.ProductID = p.ProductID
+INNER JOIN Categories cat ON p.CategoryID = cat.CategoryID
+INNER JOIN Suppliers s ON p.SupplierID = s.SupplierID

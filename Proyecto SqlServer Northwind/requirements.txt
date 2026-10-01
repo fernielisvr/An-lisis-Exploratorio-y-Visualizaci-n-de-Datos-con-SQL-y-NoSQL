@@ -1,0 +1,11 @@
+pyodbc
+sqlalchemy
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+streamlit
+python-dotenv
+nbformat>=4.2.0
+ipykernel
